@@ -8,7 +8,6 @@ exports.create = (req, res, next) => {
     return;
   }
   const body = req.body;
-  console.log(body);
   const product = new Product(req.body);
   product
     .save(product)
@@ -30,7 +29,7 @@ exports.find = (req, res, next) => {
     Product.findById(id)
       .then((data) => {
         if (!data) {
-          res.status(404).send({ message: "Not found user with id " + id });
+          res.status(404).send({ message: "Not found product with id " + id });
         } else {
           res.send(data);
         }
@@ -38,7 +37,7 @@ exports.find = (req, res, next) => {
       .catch((err) => {
         res
           .status(500)
-          .send({ message: "Error retrieving user with id " + id });
+          .send({ message: "Error retrieving product with id " + id });
       });
   } else {
     Product.find()
@@ -48,7 +47,7 @@ exports.find = (req, res, next) => {
       .catch((err) => {
         res.status(500).send({
           message:
-            err.message || "Error Occurred while retriving user information",
+            err.message || "Error Occurred while retriving product information",
         });
       });
   }

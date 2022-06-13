@@ -1,13 +1,10 @@
 # FLATIPOP API PRODUCTOS
 
-### To start the api
+## To start dev
 
-´´´
+```
 npm run dev
-
-´´´
-
-´´´
+```
 
 ## Install dependencies
 
